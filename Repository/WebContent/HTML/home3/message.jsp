@@ -32,6 +32,12 @@
 				success : function(data, textStatus) {
 					var objs = eval(data);
 					console.log(objs[0]);
+					var b = a - 1;
+					if (b == "0") {
+						$(".data" + b).text(objs[b].jg2);
+					} else if (b == "1") {
+						$(".data" + b).text(objs[0].jg1);
+					}
 				}
 			});
 		});
@@ -45,7 +51,6 @@
 				<div class="div1_div2" x=1>温度检测</div>
 			</div>
 		</div>
-
 		<table border="1" width="100%" cellspacing="0px"
 			style="border-collapse: collapse; border: 1px solid #ccc;">
 			<tbody>
@@ -53,7 +58,7 @@
 					<td width="30%" style="text-align: center;"><img
 						src="../../IMG/home/wdbj.png"></td>
 					<td width="30%" id="a1" style="text-align: center;">检测温度</td>
-					<td width="30%" style="text-align: center;">15°C</td>
+					<td width="30%" class="data0" style="text-align: center;">15°C</td>
 				</tr>
 				<tr>
 					<td colspan="3" style="text-align: center;"><input
@@ -77,7 +82,7 @@
 					<td width="30%" style="text-align: center;"><img
 						src="../../IMG/home/sdjc.png"></td>
 					<td width="30%" id="a1" style="text-align: center;">检测湿度</td>
-					<td width="30%" style="text-align: center;">15°C</td>
+					<td width="30%" style="text-align: center;" class="data1">15°C</td>
 				</tr>
 				<tr>
 					<td colspan="3" style="text-align: center;"><input
