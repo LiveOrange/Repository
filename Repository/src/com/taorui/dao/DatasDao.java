@@ -8,7 +8,7 @@ import com.taorui.entities.Dept;
 import com.taorui.entities.Record;
 
 public class DatasDao extends BaseDAO {
-	
+
 	public DatasDao() {
 		super("jdbc/test");
 	}
@@ -20,6 +20,16 @@ public class DatasDao extends BaseDAO {
 			contach.setId(rs.getInt("id"));
 			contach.setData(rs.getString("data"));
 			contach.setRecord(rs.getString("record"));
+			return contach;
+		}
+	}
+
+	private class DataMapper implements RowMapper<Record> {
+		@Override
+		public Record rowMap(ResultSet rs) throws SQLException {
+			Record contach = new Record();
+			contach.setId(rs.getInt("id"));
+			contach.setData(rs.getString("Hyphen"));
 			return contach;
 		}
 	}
@@ -35,6 +45,16 @@ public class DatasDao extends BaseDAO {
 		}
 	}
 
+	public List<Record> contact() {
+		String sql = "select * from tb_hphen order by id asc";
+		try {
+			return this.query(sql, new DataMapper());
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new DAOException(e);
+		}
+	}
+
 	public boolean updateData(String data) {
 		String sql = "update tb_data set record=? where id=1";
 		try {
@@ -44,5 +64,4 @@ public class DatasDao extends BaseDAO {
 			throw new DAOException(e);
 		}
 	}
-	
 }

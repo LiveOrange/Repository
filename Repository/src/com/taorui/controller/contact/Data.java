@@ -30,7 +30,7 @@ public class Data extends HttpServlet {
 		response.setContentType("text/html;charset=gb2312");
 		request.setCharacterEncoding("utf-8");
 		String data = request.getParameter("data");
-		String datas;
+		String datas=null;
 		if ("1".equals(data) || "2".equals(data)) {
 			datas = "010300140002840f";
 		} else if ("3".equals(data)) {
@@ -38,7 +38,7 @@ public class Data extends HttpServlet {
 		} else if ("4".equals(data)) {
 			datas = "0103003C00014406";
 		}
-		dataService.updateData(data);
+		dataService.updateData(datas);
 		// System.out.println(data);
 	}
 
