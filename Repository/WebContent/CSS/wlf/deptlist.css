@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+* {
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+#dept {
+	margin: 10px 0px;
+}
+
+#dept li a:hover {
+	background-color: white;
+	color: gray;
+}
+
+#emps {
+	clear: both;
+	margin: 0px 10px;
+	padding: 10px 0px;
+}
+
+#emps table {
+	width: 100%;
+	border: 1px #3399FF solid;
+	border-collapse: collapse;
+}
+
+#emps table th {
+	padding: 5px 0px;
+	background: #33CCFF;
+	color: white;
+	border: 1px #CCC solid;
+	font-weight: normal;
+}
+
+#emps table td {
+	text-align: center;
+	padding: 5px 0px;
+	border: 1px #CCC solid;
+}
+
+.page {
+	margin-left: 10px;
+	clear: both;
+}
+
+.page div a, .page div span {
+	text-decoration: none;
+	margin-right: 10px;
+	color: gray;
+	font-size: 12px;
+}
+
+#toolbar {
+	margin: 5px 10px;
+}
+
+.icon {
+	text-decoration: none;
+	font-size: 14px;
+	margin-right: 8px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 18px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: gray;
+}
+
+.button {
+	margin-right: 4px;
+	border-radius: 4px;
+	color: #ffffff;
+	border: 1px solid #F5F5F5;
+}
+
+.button1 {
+	background-color: #5CB85C;
+}
+
+.button2 {
+	background-color: #D9534F;
+}

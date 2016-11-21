@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+body {
+	word-break: keep-all; /* 不换行 */
+	white-space: nowrap; /* 不换行 */
+	margin: 1px;
+	padding: 1px;
+	border: 0px solid #CCCCCC;
+	height: 100%;
+	font-size: 0.8em;
+}
+
+.icon {
+	text-decoration: none;
+	margin-right: 8px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 25px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: gray;
+}
+
+.add_dept {
+	background-image: url(../../IMG/home/tq.png);
+}
+
+.shaxin {
+	float: right;
+	padding-left: 10px;
+	background-image: url(../../IMG/shaxin.png);
+}
+
+#div1 {
+	background-image: url(../../IMG/div1.png);
+	height: 30px;
+}
+
+#div2 {
+	position: relative;
+	top: 5px;
+}
+
+td {
+	height: 20px;
+	font-size: 0.8em;
+}
+
+span {
+	float: right;
+}
+
+tr {
+	height: 30px;
+}
+
+select {
+	border-color: #EBF0F3;
+}
+
+option {
+	border-color: #EBF0F3;
+}

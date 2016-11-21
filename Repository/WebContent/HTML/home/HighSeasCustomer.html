@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../JS/mydate.js"></script>
+<script src="../../jqery/jquery-3.1.0.js"></script>
+<script src="../../jqery/jquery.animate-colors.js"></script>
+<script src="../../JS/province.js"></script>
+<script src="../../JS/city.js"></script>
+<script src="../../JS/highSeas.js"></script>
+<script>
+	$(function() {
+		//添加省份
+		for (var i = 0; i < province.length; i++) {
+			$("<option>").val(province[i].ProID).html(province[i].name)
+					.appendTo($("#provincs"));
+		}
+		//添加城市
+		$("#provincs").change(function() {
+			//删除城市
+			$("#citys option").remove();
+			for (var i = 0; i < city.length; i++) {
+				if (city[i].ProID == $(this).val()) {
+					$("<option>").html(city[i].name).appendTo($("#citys"));
+				}
+			}
+
+		});
+		$("#provincs").trigger("change");
+		$(".input1").highSeas();
+		$(".input2").click(function(){
+			window.location.reload();
+		});
+	});
+</script>
+<style type="text/css">
+body {
+	padding: 0px;
+	margin: 0px;
+	font-size: 12px;
+}
+
+.qwe {
+	border: 0px solid #ccc;
+	width: 98%;
+	position: absolute;
+	left: 5px;
+}
+
+.table1 {
+	white-space: nowrap;
+	border-collapse: collapse;
+	margin-top: 10px;
+	text-align: right;
+	border: 1px solid #ccc;
+	z-index: 1;
+}
+
+.table1_tr1 {
+	margin-top: 5px;
+	height: 42px;
+	border: 1px solid #ccc;
+}
+
+.h5 {
+	position: absolute;
+	top: -18px;
+	border: 0px solid #ccc;
+	background-color: #F7F7F7;
+	z-index: 2;
+	left: 2px;
+	font-weight: normal;
+	font-size: 13px;
+}
+
+.h6 {
+	position: relative;
+	top: -12px;
+	font-weight: normal;
+	font-size: 13px;
+	left: -2px;
+}
+
+.table2 tr {
+	height: 30px;
+}
+
+.table2 {
+	margin-top: -25px;
+}
+
+.table2_td {
+	text-align: left;
+}
+
+.table2_td_a {
+	text-align: right;
+	position: absolute;
+}
+.input {
+	border: 0px solid #EAEAEA;
+	height: 28px;
+	border-radius: 4px;
+	margin-right: 6px;
+	margin-left: 4px;
+	margin-top: 4px;
+	width: 100px;
+	color: #FFFFFF;
+}
+
+.input1 {
+	background-color: #E07678;
+}
+
+.input2 {
+	background-color: #b1d85c;
+}
+.div_td1{
+text-align: center;
+}
+</style>
+</head>
+<body>
+
+	<div class="div_3">
+		<h5 class="h5">库容使用情况</h5>
+		<div class="qwe">
+			<table border="0" width="100%" class="table1" cellspacing="0px">
+				<tbody>
+					<tr class="table1_tr1">
+						<td width="10%">库容上线：</td>
+						<td width="12.5%" style="">300</td>
+						<td width="10%">库存已用：</td>
+						<td width="12.5%" class="div_td1 div_dt2"></td>
+						<td width="10%">月挑入上限：</td>
+						<td width="12.5%" class="div_td1">100</td>
+						<td width="10%">月挑入客户人数：</td>
+						<td width="12.5%" class="div_td1 div_dt3"></td>
+					</tr>
+				</tbody>
+			</table>
+			<h5 class="h6">客户信息</h5>
+			<div>
+				<table border="1" width="100%" class="table1 table2"
+					cellspacing="0px">
+					<tbody>
+						<tr>
+							<td>LoginID：</td>
+							<td name="LoginID" class="table2_td logId"
+								contentEditable="true" ></td>
+							<td>客户ID：</td>
+							<td class="table2_td id" contentEditable="true"></td>
+						</tr>
+						<tr>
+							<td>公司名：</td>
+							<td class="table2_td name" contentEditable="true"></td>
+							<td>区号：</td>
+							<td class="table2_td" contentEditable="true" ></td>
+						</tr>
+						<tr>
+							<td>主营产品：</td>
+							<td class="table2_td prod" contentEditable="true"></td>
+							<td>行业：</td>
+							<td class="table2_td"><select style="width: 99.5%">
+									<option value="0" selected>女装
+									<option value="1">男装
+									<option value="2">童装
+									<option value="3">内衣
+									<option value="4">鞋
+									<option value="5">箱包皮具
+									<option value="6">母婴用品
+									<option value="7">服饰配件、饰品
+									<option value="8">工艺品、礼品
+									<option value="9">运动户外+
+									<option value="10">日用百货
+									<option value="11">美妆日化
+									<option value="12">LED
+									<option value="13">纸业
+									<option value="14">照明工业
+									<option value="15">印刷 、
+									<option value="16">仪器仪表
+									<option value="17">医药
+									<option value="18">保养
+									<option value="19">冶金矿产
+									<option value="20">眼镜及配件
+									<option value="21">橡塑
+									<option value="22">项目合作
+									<option value="23">五金
+									<option value="24">工具
+									<option value="25">玩具
+									<option value="26">通信产品
+									<option value="27">数码
+									<option value="28">电脑
+									<option value="29">食品
+									<option value="30">饮料
+									<option value="31">生鲜
+									<option value="32">商务服务
+									<option value="33">汽摩及配件
+									<option value="34">汽车用品
+									<option value="36">农业
+									<option value="37">能源
+									<option value="38">库存积压
+									<option value="39">精细化学品
+									<option value="40">家装
+									<option value="41">建材
+									<option value="42">家用电器
+									<option value="43">家纺家饰
+									<option value="44">加工
+									<option value="45">机械及行业
+									<option value="46">设备
+									<option value="47">机床
+									<option value="48">环保
+									<option value="49">个人防护
+									<option value="50">钢铁
+									<option value="51">纺织
+									<option value="52">皮革
+									<option value="53">二手设备转让
+									<option value="54">电子元器件
+									<option value="55">电工电气
+									<option value="56">代理
+									<option value="57">传媒
+									<option value="58">宠物及园艺
+									<option value="59">餐饮
+									<option value="60">包装 办公
+									<option value="61">文教 安全
+									<option value="62">防护
+							</select></td>
+						</tr>
+						<tr>
+							<td>客户类型：</td>
+							<td class="table2_td"><select select style="width: 94%">
+									<option value="0" selected>非重点客户
+									<option value="1">重点客户
+							</select></td>
+							<td>地址：</td>
+							<td class="table2_td" contentEditable="true"></td>
+						</tr>
+						<tr>
+							<td>注册时间：</td>
+							<td class="table2_td"><input type="text" name="starttime"
+								onfocus="MyCalendar.SetDate(this)" value="2008-08-05"
+								style="width: 45%">to<input type="text" name="starttime"
+								onfocus="MyCalendar.SetDate(this)" value="2008-08-05"
+								style="width: 45%"></td>
+							<td>最后登录时间：</td>
+							<td class="table2_td"><input type="text" name="starttime"
+								onfocus="MyCalendar.SetDate(this)" value="2008-08-05"
+								style="width: 99%"></td>
+						</tr>
+						<tr>
+							<td>地区：</td>
+							<td class="table2_td"><select id="provincs"
+								style="width: 46%"></select>ad<select id="citys"
+								style="width: 45.5%"></select></td>
+							<td>执照状态：</td>
+							<td class="table2_td" ><input type="radio" checked="checked" name="web"
+									value="1">有 <input type="radio" name="web" value="0">无 </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<h5 class="h6">机会信息</h5>
+				<table border="1" class="table1 table2" cellspacing="0px"
+					width="100%">
+					<tbody>
+						<tr>
+							<td width="10%">售卖集合：</td>
+							<td width="51.5%"><select style="width: 99.5%">
+									<option value="0">诚信托管</option>
+									<option value="1">设计</option>
+									<option value="2">培训</option>
+									<option value="3">其他一</option>
+									<option value="3">其他二</option>
+							</select></td>
+							<td width="14%">新续签类型：</td>
+							<td width="28.5%" class="table2_td"
+								ondblclick="this.contentEditable=true;"></td>
+						</tr>
+						<tr>
+							<td>扔公海时间：</td>
+							<td><input type="text" name="starttime"
+								onfocus="MyCalendar.SetDate(this)" value="2008-08-05"
+								style="width: 99%"></td>
+							<td>第一次lead来源：</td>
+							<td class="table2_td" ondblclick="this.contentEditable=true;"></td>
+						</tr>
+						<tr>
+							<td>近30天重走</td>
+							<td><input type="checkbox" name=""></td>
+							<td>扔公海原因</td>
+							<td class="table2_td" ondblclick="this.contentEditable=true;"></td>
+						</tr>
+						<tr>
+							<td>最后联系时间</td>
+							<td><input type="text" name="starttime"
+								onfocus="MyCalendar.SetDate(this)" value="2008-08-05"
+								style="width: 99%"></td>
+							<td>成熟度</td>
+							<td><select style="width: 99.5%">
+									<option value="0">暂未确定成熟度</option>
+									<option value="A">确定合作，3天内办</option>
+									<option value="B">确定合作，7天内合作</option>
+									<option value="C">KP确定，意向不确定</option>
+									<option value="D">KP确定，明确不搞</option>
+							</select></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<table>
+				<tr>
+					<td>&nbsp;&ensp;<input type=submit value=搜索 class="input input1" ></td>
+					<td><input type="reset" value=清空 class="input input2" ></td>
+				</tr>
+			</table>
+		</div>
+		<div></div>
+	</div>
+</body>
+</html>

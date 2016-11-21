@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../../jqery/jquery-3.1.0.js"></script>
+<link href="../../CSS/xmw/weather.css" rel="stylesheet" type="text/css" />
+<script src="../../jqery/jquery-3.1.0.js"></script>
+<script src="../../JS/citys.js"></script>
+<script>
+	$(function() {
+		//城市添加
+		for (var i = 0; i < cities.length; i++) {
+			$("<option>").val(cities[i].areaid).html(cities[i].countyname)
+					.appendTo($("#city"));
+		}
+		$("#city")
+				.change(
+						function() {
+							var url = "http://aider.meizu.com/app/weather/listRealtime";
+							var p = {
+								cityIds : $(this).val()
+							};
+							$.getJSON(url, p, function(data) {
+								var spans = $("span");
+								var values = [ data.value[0].cityName,
+										data.value[0].weather,
+										data.value[0].temp_day_c + "℃",
+										data.value[0].temp_night_c + "℃",
+										data.value[0].temp + "℃",
+										data.value[0].time, ];
+								spans.each(function(index, e) {
+									$(this).html(values[index]);
+								});
+							});
+						});
+		$("#city").trigger("change");
+	});
+</script>
+</head>
+<body>
+	<div style="border: 0px solid #000000" id="div1">
+		<div id="div2">
+			<a class="icon add_dept">城市天气</a> <a 
+				class="icon "><select id="city" style="width: 30%"></select></a> <a href="" class="icon shaxin">&nbsp;</a>
+		</div>
+	</div>
+	<div>
+		<table border="0" width="100%" cellspacing="0px"
+			style="border-collapse: collapse">
+			<tbody>
+				<tr>
+					<td width="10%"><img src="../../IMG/home/cs.png"></td>
+					<td width="90%" id="a1"><span>城市</span>城市</td>
+				</tr>
+				<tr>
+					<td width="10%"><img src="../../IMG/home/tq2.png"></td>
+					<td><span>天气</span>天气</td>
+				</tr>
+				<tr>
+					<td width="10%"><img src="../../IMG/home/wd.png"></td>
+					<td><span>温度</span>最高温度</td>
+				</tr>
+				<tr>
+					<td width="10%"><img src="../../IMG/home/yw.png"></td>
+					<td><span>白天</span>夜晚温度</td>
+				</tr>
+				<tr>
+					<td width="10%"><img src="../../IMG/home/ss.png"></td>
+					<td><span>夜晚</span>实时温度</td>
+				</tr>
+				<tr>
+					<td width="10%"><img src="../../IMG/home/sj.png"></td>
+					<td><span>更新时间</span>更新时间</td>
+				</tr>
+				<tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
