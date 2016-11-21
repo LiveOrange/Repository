@@ -17,12 +17,12 @@ import com.taorui.tags.Chuankou;
  */
 @WebServlet("/HTML/home3/Data")
 public class Data extends HttpServlet {
-	private DatasService datas;
+	private DatasService dataService;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		datas = new DatasService();
+		dataService = new DatasService();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,14 +32,14 @@ public class Data extends HttpServlet {
 		String data = request.getParameter("data");
 		String datas;
 		if ("1".equals(data) || "2".equals(data)) {
-			datas="010300140002840f";
+			datas = "010300140002840f";
 		} else if ("3".equals(data)) {
-			datas="010300340001c5c4";
+			datas = "010300340001c5c4";
 		} else if ("4".equals(data)) {
-			datas="0103003C00014406";
+			datas = "0103003C00014406";
 		}
+		dataService.updateData(data);
 		System.out.println(data);
-
 	}
 
 }
