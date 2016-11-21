@@ -4,8 +4,8 @@ public class Record {
 	private int id;
 	private String data;
 	private String record;
-	private String jg1;
-	private String jg2;
+	private String jg1 = "";
+	private String jg2 = "";
 
 	public void setJg1(String jg1) {
 		this.jg1 = jg1;

@@ -30,6 +30,8 @@
 					data : a,
 				},
 				success : function(data, textStatus) {
+					var objs = eval(data);
+					console.log(objs[0]);
 				}
 			});
 		});
