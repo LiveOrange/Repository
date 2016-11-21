@@ -39,7 +39,7 @@ public class Data extends HttpServlet {
 			datas = "0103003C00014406";
 		}
 		dataService.updateData(data);
-		System.out.println(data);
+		// System.out.println(data);
 	}
 
 }
