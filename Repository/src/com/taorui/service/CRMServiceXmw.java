@@ -105,8 +105,6 @@ public class CRMServiceXmw {
 		}
 		if (i != -1) {
 			user.setDeptid(i);
-			System.out.println("存在" + i);
-			// return "员工信息修改失败！该部门不存在！";
 			if (crmdao.updateUser(user)) {
 				return "员工信息修改成功！";
 			} else {
@@ -124,8 +122,8 @@ public class CRMServiceXmw {
 		return list;
 	}
 
-//	// 10、查询
-//	public List<User1> finClientByPages() {
-//		return crmdao.finClientByPage();
-//	}
+	// 10、查询
+	public List<User1> finClientByPages() {
+		return crmdao.finClientByPage();
+	}
 }

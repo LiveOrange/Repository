@@ -129,8 +129,8 @@
 				<tr>
 					<td width="30%" style="text-align: center;"><img
 						src="../../IMG/home/rtgy.png"></td>
-					<td width="30%" id="a1" style="text-align: center;">检测湿度</td>
-					<td width="30%" style="text-align: center;">15°C</td>
+					<td width="30%" id="a1" style="text-align: center;">感应状态</td>
+					<td width="30%" style="text-align: center;">有人</td>
 				</tr>
 				<tr>
 					<td colspan="3" style="text-align: center;"><input
